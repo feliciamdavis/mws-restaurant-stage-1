@@ -17,8 +17,11 @@
         "no-floating-decimal": "error",
         "brace-style": ["error", "stroustrup"],
         "quotes": [2, "single", "avoid-escape"],
-        "indent": ["error", 4, {"SwitchCase": 1}]
+        "indent": ["error", 4, {"SwitchCase": 1}],
+        "no-console": "off"
     },
     "globals": {
+        "L": true,
+        "DBHelper": true
     }
 }
