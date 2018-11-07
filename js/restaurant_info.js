@@ -1,5 +1,5 @@
 let restaurant;
-var newMap;
+let newMap;
 
 /**
  * Initialize map as soon as the page is loaded.
@@ -17,13 +17,13 @@ const initMap = () => {
             console.error(error);
         }
         else {
-            self.newMap = L.map('map', {
+            newMap = L.map('map', {
                 center: [restaurant.latlng.lat, restaurant.latlng.lng],
                 zoom: 16,
                 scrollWheelZoom: false
             });
             L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-                mapboxToken: '<your MAPBOX API KEY HERE>',
+                mapboxToken: 'pk.eyJ1IjoiZGF2aXNmZWxpY2lhbSIsImEiOiJjam82bXBlN3IwNWZiM3FvMmk3bWkzMXNvIn0.Bwi53xmjyy2mCtyiM8ZrnQ',
                 maxZoom: 18,
                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, '
                     + '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, '
@@ -31,7 +31,7 @@ const initMap = () => {
                 id: 'mapbox.streets'
             }).addTo(newMap);
             fillBreadcrumb();
-            DBHelper.mapMarkerForRestaurant(self.restaurant, self.newMap);
+            DBHelper.mapMarkerForRestaurant(self.restaurant, newMap);
         }
     });
 }
