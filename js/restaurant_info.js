@@ -31,7 +31,7 @@ const initMap = () => {
                 id: 'mapbox.streets'
             }).addTo(newMap);
             fillBreadcrumb();
-            DBHelper.mapMarkerForRestaurant(self.restaurant, newMap);
+            DBHelper.mapMarkerForRestaurant(restaurant, newMap);
         }
     });
 }
@@ -40,13 +40,13 @@ const initMap = () => {
  * Get current restaurant from page URL.
  */
 const fetchRestaurantFromURL = (callback) => {
-    if (self.restaurant) { // restaurant already fetched!
-        callback(null, self.restaurant)
+    if (restaurant) { // restaurant already fetched!
+        callback(null, restaurant)
         return;
     }
-    const id = getParameterByName('id');
+    const id = Number(getParameterByName('id'));
     if (!id) { // no id found in URL
-        error = 'No restaurant id in URL'
+        const error = 'No restaurant id in URL'
         callback(error, null);
     }
     else {
