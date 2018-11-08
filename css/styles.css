@@ -56,6 +56,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
     padding: 25px;
     text-align: center;
     text-transform: uppercase;
+    box-sizing: border-box;
 }
 
 /* ====================== Navigation ====================== */
@@ -280,6 +281,7 @@ nav h1 a {
     border-top: 1px solid #fff;
     padding: 140px 40px 30px;
     width: 50%;
+    box-sizing: border-box;
 }
 
 #reviews-container {
