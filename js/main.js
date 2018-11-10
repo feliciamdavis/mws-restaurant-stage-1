@@ -4,6 +4,11 @@ let cuisines;
 let newMap;
 const markers = [];
 
+// Based on code from: https://github.com/jakearchibald/trained-to-thrill/
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
+}
+
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
  */

@@ -1,6 +1,11 @@
 let restaurant;
 let newMap;
 
+// Based on code from: https://github.com/jakearchibald/trained-to-thrill/
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('./sw.js');
+}
+
 /**
  * Initialize map as soon as the page is loaded.
  */
