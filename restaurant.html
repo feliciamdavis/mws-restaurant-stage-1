@@ -22,9 +22,11 @@
 
         <!-- Aria based on: https://www.w3.org/TR/wai-aria-practices/examples/breadcrumb/index.html -->
         <!-- Beginning breadcrumb -->
-        <ul id="breadcrumb" aria-label="Breadcrumb">
-            <li><a href="./">Home</a></li>
-        </ul>
+        <nav id="breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="./">Home</a></li>
+            </ol>
+        </nav>
         <!-- End breadcrumb -->
         <!-- End nav -->
     </header>
@@ -33,8 +35,9 @@
     <!-- Beginning main -->
     <main id="maincontent">
         <!-- Beginning map -->
-        <section id="map-container">
-            <div id="map" aria-hidden="true"></div>
+        <!-- Aria role referenced from: https://stackoverflow.com/questions/44712753/what-is-a-suitable-wai-aria-role-attribute-for-a-map-element -->
+        <section id="map-container" role="application">
+            <div id="map"></div>
         </section>
         <!-- End map -->
         <!-- Beginning restaurant -->
